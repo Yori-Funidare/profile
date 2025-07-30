@@ -1,11 +1,11 @@
-const text = "Ini bukan informasi pribadi saya! namun saya melampirkan beberapa bahasa yang saya kuasai dan saya gunakan untuk membangun halaman ini serta beberapa akun sosial media saya.";
-let index = 0;
-
-function ketik(){
-  if (index < text.length){
-    document.getElementById("type").innerHTML += text.charAt(index);
-    index++;
-    setTimeout(ketik, 35);
-  }
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+  localStorage.setItem("mode", document.body.classList.contains("dark") ? "dark" : "light");
 }
-ketik()
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedMode = localStorage.getItem("mode");
+  if (savedMode === "dark") {
+    document.body.classList.add("dark");
+  }
+});
