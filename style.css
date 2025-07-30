@@ -1,87 +1,181 @@
-body {
-  background: #1a1a1a;
-  color: white;
-  font-family: Sans-Serif;
-  padding-top: 50px;
-  text-align: center;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-h4{
-  background: #2b2b2b;
-  height: 50px;
-  display: grid;
-  place-items: center;
-  
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
 }
-#img {
-  top: 30;
-  width: 150px;
-  border-radius: 50%;
-  border: 1px solid #aaa;
-  box-shadow: 0px 0px 7px white;
+
+body.dark {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #eee;
 }
 
 .container {
-  width: 90%;
-  max-width: 350px;
-  padding: 5px;
-  background: #2b2b2b;
-  margin: auto;
+  width: 100%;
+  max-width: 480px;
+}
+
+.profile-card {
+  background-color: #ffffff;
   border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.3s;
 }
 
-#type {
-  font-size: 16px;
-  display: inline-block;
-  white-space: normal;
-  margin-bottom: 15px;
-  max-width: 100%
+body.dark .profile-card {
+  background-color: #1e1e1e;
 }
-.skills {
-  margin-top: 40px;
-  padding: 5px;
-  text-align: left;
-  background: #2c2c2c;
-  border-radius: 10px;
-  max-width: 100%;
-}
-.skills h4 {
+
+.toggle-mode {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
   font-size: 20px;
-  margin-bottom: 20px;
-  color: #fff;
+  cursor: pointer;
+  color: inherit;
 }
 
-.skill-box {
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #2196f3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+  font-size: 26px;
+  font-weight: 600;
+  color: #2196f3;
+}
+
+body.dark .name {
+  color: #64b5f6;
+}
+
+.title {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+body.dark .title {
+  color: #ccc;
+}
+
+.skills-section,
+.social-section {
+  margin-top: 30px;
+}
+
+.skills-section h2,
+.social-section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.skills {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.skill {
+  text-align: left;
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
-.skill-item {
-  background: #333;
-  padding: 10px;
-  border-radius: 10px;
-  width: 22%;
-  box-shadow: 0 0 5px #00000050;
-  transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.skill img {
+  width: 32px;
+  height: 32px;
 }
 
-.skill-item:hover {
-  transform: scale(1.1);
-}
-
-.skill-item img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 8px;
-}
-
-.skill-item span {
+.skill span {
   font-size: 14px;
-  color: white;
-  word-break: break-word;
+  font-weight: 500;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 6px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.progress {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #2196f3;
+  transition: width 4s ease-in-out;
+  animation: progress 5s 1 linear;
+  left: 0px;
+}
+@keyframes progress{
+  0%{
+    background: transparent;
+  }
+  100%{
+    background: #2196f3;
+  }
+}
+body.dark .progress-bar {
+  background-color: #333;
+}
+
+body.dark .progress {
+  background-color: #64b5f6;
+}
+
+.progress.html { width: 70%; }
+.progress.css { width: 90%; }
+.progress.js { width: 80%; }
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.social-links img {
+  width: 28px;
+  transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.25);
+}
+
+@media screen and (max-width: 480px) {
+  .name { font-size: 22px; }
+  .title { font-size: 13px; }
+  .skill img { width: 28px; height: 28px; }
+  .social-links img { width: 24px; }
 }
