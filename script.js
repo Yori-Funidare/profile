@@ -5,7 +5,7 @@ function ketik(){
   if (index < text.length){
     document.getElementById("type").innerHTML += text.charAt(index);
     index++;
-    setTimeout(ketik, 20);
+    setTimeout(ketik, 35);
   }
 }
 ketik()
