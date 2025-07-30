@@ -1,4 +1,4 @@
-const text = "Ini bukan informasi pribadi saya!, namun saya melampirkan beberapa bahasa yang saya gunakan untuk membangun page ini serta beberapa akun sosial media saya.";
+const text = "Ini bukan informasi pribadi saya! namun saya melampirkan beberapa bahasa yang saya kuasai dan saya gunakan untuk membangun halaman ini serta beberapa akun sosial media saya.";
 let index = 0;
 
 function ketik(){
