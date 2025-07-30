@@ -1,0 +1,87 @@
+body {
+  background: #1a1a1a;
+  color: white;
+  font-family: Sans-Serif;
+  padding-top: 50px;
+  text-align: center;
+  margin: 0;
+}
+h4{
+  background: #2b2b2b;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  
+}
+#img {
+  top: 30;
+  width: 150px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  box-shadow: 0px 0px 7px white;
+}
+
+.container {
+  width: 90%;
+  max-width: 350px;
+  padding: 5px;
+  background: #2b2b2b;
+  margin: auto;
+  border-radius: 20px;
+}
+
+#type {
+  font-size: 16px;
+  display: inline-block;
+  white-space: normal;
+  margin-bottom: 15px;
+  max-width: 100%;
+}
+.skills {
+  margin-top: 40px;
+  padding: 5px;
+  text-align: center;
+  background: #2c2c2c;
+  border-radius: 10px;
+  max-width: 100%;
+}
+.skills h4 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.skill-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-item {
+  background: #333;
+  padding: 10px;
+  border-radius: 10px;
+  width: 22%;
+  box-shadow: 0 0 5px #00000050;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-item:hover {
+  transform: scale(1.1);
+}
+
+.skill-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.skill-item span {
+  font-size: 14px;
+  color: white;
+  word-break: break-word;
+}
