@@ -1,52 +1,60 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Yori Profile</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Yori</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
   <div class="container">
-  <div class="skills">
-  <img src="./image/yori.jpg" alt="Yori image" id="img" />
-  <h3>Yori Funidare</h3>
-  <p id="type"></p> 
-      <div class="skill-box">
-        <div class="skill-item">
-          <img src="./image/html.png" alt="HTML" />
-          <span>HTML</span>
-        </div>
-        <div class="skill-item">
-          <img src="./image/css.png" alt="CSS" />
-          <span>CSS</span>
-        </div>
-        <div class="skill-item">
-          <img src="./image/js.png" alt="JavaScript" />
-          <span>JavaScript</span>
-          </div>
-      <div class="skill-item">
-      <a href="https://www.facebook.com/kntol.namek" target="_blank">
-        <img src="./image/fb.png" alt="Facebook" />
-      </a>
-      <span>Facebook</span>
-      </div>
-      <div class="skill-item">
-      <a href="https://github.com/yori-funidare" target="_blank">
-        <img src="./image/gh.png" alt="GitHub" />
-      </a>
-      <span>Github</span>
-      </div>
-      <div class="skill-item">
-      <a href="https://Instagram.com/yori_9z" target="_blank">
-        <img src="./image/ig.png" alt="Instagram" />
-      </a>
-      <span>Instagram</span>
+    <div class="profile-card">
+      <button class="toggle-mode" onclick="toggleDarkMode()">AM / PM</button>
+
+      <img src="image/giphy.gif" alt="Foto Profil" class="profile-photo" />
+      <h1 class="name">Yori Funidare</h1>
+      <p class="title">Creative Front-End Developer</p>
+
+      <div class="skills-section">
+        <h2>Keahlian Bahasa Pemrograman</h2>
+        <div class="skills">
+          <div class="skill">
+            <div class="skill-header">
+              <img src="image/html.png" alt="HTML" />
+              <span>HTML</span>
             </div>
+            <div class="progress-bar"><div class="progress html"></div></div>
           </div>
+
+          <div class="skill">
+            <div class="skill-header">
+              <img src="image/css.png" alt="CSS" />
+              <span>CSS</span>
+            </div>
+            <div class="progress-bar"><div class="progress css"></div></div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-header">
+              <img src="image/js.png" alt="JavaScript" />
+              <span>JavaScript</span>
+            </div>
+            <div class="progress-bar"><div class="progress js"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-section">
+        <h2>Sosial Media</h2>
+        <div class="social-links">
+          <a href="https://github.com/yori-funidare" target="_blank"><img src="image/gh.png" alt="GitHub" /></a>
+          <a href="https://facebook.com/kntol.namek" target="_blank"><img src="image/fb.png" alt="Facebook" /></a>
+          <a href="https://instagram.com/yori_9z" target="_blank"><img src="image/ig.png" alt="Instagram" /></a>
         </div>
       </div>
     </div>
-    
-    <script src="script.js"></script>
-  </body>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
