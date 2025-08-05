@@ -3,54 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Profile Yori</title>
   <link rel="stylesheet" href="style.css" />
+  <title>Profile</title>
 </head>
 <body>
-  <div class="container">
-    <div class="profile-card">
-      <button class="toggle-mode" onclick="toggleDarkMode()">AM / PM</button>
+  <div class="profile-card">
+    <img src="./icons/giphy.gif" class="profile-image" alt="Foto Profil">
 
-      <img src="image/giphy.gif" alt="Foto Profil" class="profile-photo" />
-      <h1 class="name">Yori Funidare</h1>
-      <p class="title">Creative Front-End Developer</p>
+    <div class="container">
+      <p class="name">YORI FUNIDARE</p>
 
-      <div class="skills-section">
-        <h2>Persentase bahasa.</h2>
-        <div class="skills">
-          <div class="skill">
-            <div class="skill-header">
-              <img src="image/html.png" alt="HTML" />
-              <span>HyperText Markup Language</span>
-            </div>
-            <div class="progress-bar"><div class="progress html"></div></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill-header">
-              <img src="image/css.png" alt="CSS" />
-              <span>Cascading Style Sheets</span>
-            </div>
-            <div class="progress-bar"><div class="progress css"></div></div>
-          </div>
-
-          <div class="skill">
-            <div class="skill-header">
-              <img src="image/js.png" alt="JavaScript" />
-              <span>JavaScript</span>
-            </div>
-            <div class="progress-bar"><div class="progress js"></div></div>
-          </div>
+      <!-- Gambar trigger -->
+      <div class="progress-bar">
+        <div class="progress-fill" onclick="showSkills('html')">
+          <img src="./icons/html.png" alt="HTML">
+        </div>
+        <div class="progress-fill" onclick="showSkills('css')">
+          <img src="./icons/css.png" alt="CSS">
+        </div>
+        <div class="progress-fill" onclick="showSkills('js')">
+          <img src="./icons/js.png" alt="JavaScript">
         </div>
       </div>
 
-      <div class="social-section">
-        <h2>Sosial Media</h2>
-        <div class="social-links">
-          <a href="https://github.com/yori-funidare" target="_blank"><img src="image/gh.png" alt="GitHub" /></a>
-          <a href="https://facebook.com/kntol.namek" target="_blank"><img src="image/fb.png" alt="Facebook" /></a>
-          <a href="https://instagram.com/yori_9z" target="_blank"><img src="image/ig.png" alt="Instagram" /></a>
+      <!-- Skill bar -->
+      <div class="skills">
+        <div class="skill html">
+          <div class="label">
+            <img src="./icons/html.png" alt="HTML">
+            <span>HTML</span>
+          </div>
+          <div class="bar"><div class="fill" data-width="80%"></div></div>
         </div>
+        <div class="skill css">
+          <div class="label">
+            <img src="./icons/css.png" alt="CSS">
+            <span>CSS</span>
+          </div>
+          <div class="bar"><div class="fill" data-width="70%"></div></div>
+        </div>
+        <div class="skill js">
+          <div class="label">
+            <img src="./icons/js.png" alt="JavaScript">
+            <span>JavaScript</span>
+          </div>
+          <div class="bar"><div class="fill" data-width="50%"></div></div>
+        </div>
+      </div>
+
+      <!-- Sosial Media -->
+      <div class="social-media">
+        <a href="https://github.com/yori-funidare/" target="_blank">
+          <img src="./icons/gh.png" alt="GitHub">
+        </a>
+        <a href="https://instagram.com/yori_9z/" target="_blank">
+          <img src="./icons/ig.png" alt="Instagram">
+        </a>
+        <a href="https://facebook.com/kntol.namek/" target="_blank">
+          <img src="./icons/fb.png" alt="Facebook">
+        </a>
       </div>
     </div>
   </div>
