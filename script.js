@@ -1,11 +1,12 @@
-function toggleDarkMode() {
-  document.body.classList.toggle("dark");
-  localStorage.setItem("mode", document.body.classList.contains("dark") ? "dark" : "light");
-}
+ function showSkills(target) {
+      const allFills = document.querySelectorAll('.fill');
+      allFills.forEach(fill => {
+        fill.style.width = '0';
+        fill.classList.remove('animate');
+      });
 
-window.addEventListener("DOMContentLoaded", () => {
-  const savedMode = localStorage.getItem("mode");
-  if (savedMode === "dark") {
-    document.body.classList.add("dark");
-  }
-});
+      const selectedFill = document.querySelector(`.skill.${target} .fill`);
+      const width = selectedFill.getAttribute('data-width');
+      selectedFill.style.width = width;
+      selectedFill.classList.add('animate');
+    }
