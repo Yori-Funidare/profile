@@ -1,12 +1,9 @@
- function showSkills(target) {
-      const allFills = document.querySelectorAll('.fill');
-      allFills.forEach(fill => {
-        fill.style.width = '0';
-        fill.classList.remove('animate');
-      });
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.bar > i').forEach((el, idx) => {
+    const value = el.getAttribute('data-value') || 0;
 
-      const selectedFill = document.querySelector(`.skill.${target} .fill`);
-      const width = selectedFill.getAttribute('data-width');
-      selectedFill.style.width = width;
-      selectedFill.classList.add('animate');
-    }
+    setTimeout(() => {
+      el.style.width = value + '%';
+    }, 150 * idx);
+  });
+});
