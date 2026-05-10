@@ -6,6 +6,7 @@ function updateClock() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+
   setInterval(updateClock, 1000);
   updateClock();
 
@@ -13,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const val = el.getAttribute('data-value');
     setTimeout(() => { el.style.width = val + '%'; }, 500);
   });
-  
+
   document.querySelectorAll('.proj-header').forEach(header => {
     header.addEventListener('click', () => {
       const parent = header.parentElement;
