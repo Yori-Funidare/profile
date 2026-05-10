@@ -1,24 +1,42 @@
 function updateClock() {
-  const now = new Date();
-  const options = { timeZone: 'Asia/Jakarta', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
-  const timeString = new Intl.DateTimeFormat('id-ID', options).format(now);
-  document.getElementById('realtime-clock').textContent = `${timeString} WIB`;
+    try {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        
+        const timeString = `${hours}:${minutes}:${seconds} WIB`;
+        const clockElement = document.getElementById('realtime-clock');
+        
+        if (clockElement) {
+            clockElement.textContent = timeString;
+        }
+    } catch (err) {
+        console.error("Clock Error:", err);
+    }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
-  setInterval(updateClock, 1000);
-  updateClock();
+    updateClock(); 
+    setInterval(updateClock, 1000);
 
-  document.querySelectorAll('.bar > i').forEach((el) => {
-    const val = el.getAttribute('data-value');
-    setTimeout(() => { el.style.width = val + '%'; }, 500);
-  });
+    const bars = document.querySelectorAll('.bar > i');
+    bars.forEach((el) => {
+        const val = el.getAttribute('data-value');
 
-  document.querySelectorAll('.proj-header').forEach(header => {
-    header.addEventListener('click', () => {
-      const parent = header.parentElement;
-      parent.classList.toggle('active');
+        setTimeout(() => { 
+            el.style.width = val + '%'; 
+        }, 300);
     });
-  });
+
+
+    const headers = document.querySelectorAll('.proj-header');
+    headers.forEach(header => {
+        header.addEventListener('click', () => {
+            const parent = header.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
 });
+          
